@@ -159,12 +159,40 @@ body.light .project-card:hover { box-shadow: 0 16px 32px rgba(0,0,0,0.12); }
 .project-card .card-meta { font-size: 10.5px; color: var(--text-dim); margin-top: 2px; display: flex; align-items: center; gap: 6px; }
 .card-meta .drive-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--success); }
 
-.empty-state { text-align: center; margin-top: 100px; color: var(--text-dim); opacity: 0; animation: fadeSlideDown .5s .1s ease forwards; }
+.empty-state { text-align: center; margin-top: 90px; color: var(--text-dim); opacity: 0; animation: fadeSlideDown .5s .1s ease forwards; display: flex; flex-direction: column; align-items: center; max-width: 340px; margin-left: auto; margin-right: auto; }
 .empty-icon { font-size: 46px; margin-bottom: 10px; }
 .spinner { width: 34px; height: 34px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; margin: 0 auto 14px; animation: spin .8s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-.fab { position: fixed; right: 34px; bottom: 34px; z-index: 30; background: var(--accent); color: #171716; border: none; border-radius: 30px; padding: 14px 22px; font-weight: 700; font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 10px 26px rgba(0,0,0,0.4); transition: transform .15s ease, box-shadow .15s ease; }
+/* ============ EMPTY STATE (reui-style) ============ */
+.empty-media {
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 10px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  margin-bottom: 16px;
+}
+.empty-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.empty-desc { font-size: 13.5px; line-height: 1.55; color: var(--text-dim); margin-bottom: 18px; }
+.empty-desc a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
+.empty-desc a:hover { color: var(--accent); }
+.empty-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--bg-panel); color: var(--text);
+  border: 1px solid var(--border); border-radius: 8px;
+  padding: 9px 18px; font-size: 13.5px; font-weight: 600;
+  font-family: inherit; cursor: pointer;
+  transition: background .15s ease, border-color .15s ease, transform .15s ease;
+}
+.empty-btn:hover { background: rgba(255,255,255,0.06); border-color: var(--text-dim); }
+body.light .empty-btn:hover { background: rgba(0,0,0,0.05); }
+.empty-btn:active { transform: scale(.96); }
+.empty-btn span { font-size: 15px; line-height: 1; }
+
+.fab { position: fixed; right: 34px; bottom: 34px; z-index: 30; background: var(--accent); color: #171716; border: none; border-radius: 30px; padding: 14px 22px; font-weight: 700; font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 10px 26px rgba(0,0,0,0.4); transition: transform .15s ease, box-shadow .15s ease, opacity .2s ease; }
+.fab.hidden { display: none; }
 .fab:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 14px 30px rgba(0,0,0,0.5); }
 .fab-icon { font-size: 18px; line-height: 1; }
 
